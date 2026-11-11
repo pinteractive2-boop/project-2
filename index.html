@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Utility - project-2</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:600px;margin:40px auto;padding:0 16px;line-height:1.5}
+  h1{font-size:1.25rem;margin-bottom:8px}
+  .card{border:1px solid #ddd;border-radius:8px;padding:16px;background:#fafafa;margin-top:10px}
+  label{display:block;margin:10px 0 4px;font-weight:600;font-size:0.9rem}
+  input{width:100%;padding:8px;box-sizing:border-box;margin-bottom:8px;border:1px solid #ccc;border-radius:4px}
+  button{padding:8px 16px;background:#2563eb;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:0.95rem;margin-right:8px}
+  button:hover{background:#1d4ed8}
+  #out{margin-top:12px;font-weight:600}
+  .hint{font-size:0.85rem;color:#6b7280;margin-top:8px}
+</style>
+</head>
+<body>
+<h1>Utility Module (project-2)</h1>
+<p class="hint">Reusable JavaScript utility module. Load <code>utils.js</code> in any project.</p>
+<div class="card">
+  <label>Name for greeting</label>
+  <input type="text" id="name" value="Guest">
+  <button onclick="greet()">Greeting</button>
+  <button onclick="demoCard()">Demo card</button>
+  <div id="out"></div>
+</div>
+<script src="utils.js"></script>
+<script>
+function greet(){
+  var out=document.getElementById('out');
+  out.innerHTML='<div class="card">'+utils.greeting(document.getElementById('name').value)+'</div>';
+}
+function demoCard(){
+  var out=document.getElementById('out');
+  var card=utils.createCard('Utility Card','Created by the shared utility module (project-2).');
+  out.innerHTML='';
+  out.appendChild(card);
+}
+</script>
+</body>
+</html>
